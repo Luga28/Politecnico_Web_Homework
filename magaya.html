@@ -1,0 +1,22 @@
+return getCollectFee()
+
+function getCollectFee(){
+    var charges = dbx.Context.CurrentObject.Charges
+    var total = 0;
+    var collectFee = 0
+
+    if(hasValue(charges)){
+        dbx.using(charges)
+            .iterate(function (charge) {
+                var description = charge.ChargeDefinition.Description
+                if(description != "Customs Fee" && description != "Collect Fee" && description != "Handling Fee") {
+                    total +=  charge.AmountInCurrency.amount
+                }
+            });
+    }
+    collectFee = Math.max((total* 0.02), 10)
+    return collectFee
+}
+
+function hasValue(obj){
+    return (obj != undefined && obj != null);

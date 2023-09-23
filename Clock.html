@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="class">
+        Im the querySelector for class
+    </div>
+    <div id="id_query">
+        Im the querySelector for
+    </div>
+    <div id="id">
+        The getElementById
+    </div>
+
+
+    <script>
+        /*
+    document.querySelector('.class').textContent = "Im the querySelector for class works"
+    document.querySelector('#id_query').textContent = "Im the querySelector for id works"
+    document.getElementById('id').textContent = "The getElementById Works" */
+    var class_var = document.querySelector('.class');
+    class_var.textContent = "The Class_var works";
+    var id_query_var = document.querySelector('#id_query')
+    id_query_var.textContent = "The id_query_var works"
+    var id_var = document.getElementById('id')
+    id_var.textContent = "id_var works"
+    </script>
+
+</body>
+</html>
